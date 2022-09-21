@@ -13,6 +13,25 @@ public class TestMain {
 
     //相同性测试
     @Test
+    public void testVoid(){
+        String path2 = " ";
+        Map<String, List<Integer>> stringListMap1 = TokenizerUtils.CountWord ( this.path );
+        Map<String, List<Integer>> stringListMap2 = TokenizerUtils.CountWord ( path2 );
+        Double similarity = TokenizerUtils.CosCount ( stringListMap1,stringListMap2 );
+        FileUtils.writeFile ( this.outPath+"res.txt",String.valueOf ( similarity ) );
+        System.out.println (similarity );
+    }
+    @Test
+    public void testSame_1(){
+        String path2 = "orig.txt";
+        Map<String, List<Integer>> stringListMap1 = TokenizerUtils.CountWord ( this.path );
+        Map<String, List<Integer>> stringListMap2 = TokenizerUtils.CountWord ( path2 );
+        Double similarity = TokenizerUtils.CosCount ( stringListMap1,stringListMap2 );
+        FileUtils.writeFile ( this.outPath+"res.txt",String.valueOf ( similarity ) );
+        System.out.println (similarity );
+    }
+
+    @Test
     public void testSame(){
         String path2 = "orig_add.txt";
         Map<String, List<Integer>> stringListMap1 = TokenizerUtils.CountWord ( this.path );
