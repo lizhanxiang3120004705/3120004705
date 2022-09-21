@@ -14,7 +14,7 @@ public class TestMain {
     //相同性测试
     @Test
     public void testVoid(){
-        String path2 = " ";
+        String path2 = "orig_void.txt";
         Map<String, List<Integer>> stringListMap1 = TokenizerUtils.CountWord ( this.path );
         Map<String, List<Integer>> stringListMap2 = TokenizerUtils.CountWord ( path2 );
         Double similarity = TokenizerUtils.CosCount ( stringListMap1,stringListMap2 );
